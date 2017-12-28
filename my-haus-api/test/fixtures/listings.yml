@@ -2,6 +2,14 @@
 
 one:
   title: MyString
+  location: MyString
+  description: MyString
+  price: 1
+  availability: false
 
 two:
   title: MyString
+  location: MyString
+  description: MyString
+  price: 1
+  availability: false
