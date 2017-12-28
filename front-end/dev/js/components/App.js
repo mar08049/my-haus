@@ -7,7 +7,6 @@ class App extends Component.React {
     return(
       <div></div>
     )
-  );
 }
 
 export default App;
