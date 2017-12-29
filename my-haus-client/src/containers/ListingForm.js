@@ -4,9 +4,9 @@ class ListingForm extends Component {
   render() {
     return(
       <div>
-      <div>
+      </div>
     )
   }
 }
 
-export default ListingsForm;
+export default ListingForm;

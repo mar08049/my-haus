@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ListingList from "../components/ListingList.js";
-import ListingForm from "./container/ListingForm";
+import ListingForm from "./ListingForm";
 import "./Listings.css";
 
 class Listings extends Component {
