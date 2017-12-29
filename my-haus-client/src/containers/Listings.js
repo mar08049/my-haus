@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ListingList from "../components/ListingList.js";
+import ListingForm from "./container/ListingForm";
 import "./Listings.css";
 
-const Listings = (props) => (
-  <div>
-    <h1>Listings</h1>
-    {props.listings.map(listing =>
-      <div className="ListingList">
-        <h2>{listing.title}</h2>
-        <h4>{listing.location}</h4>
-        <p>Fee per Night: ${listing.price}</p>
-        </div>
-      )}
-  </div>
-);
+class Listings extends Component {
+
+  render() {
+    return (
+      <div className="ListingsContainer">
+        <h1>Listings</h1>
+        {this.props.listings.map(listing => <ListingList key={listings.id} listing={ListingForm}/>)}
+      </div>
+    )
+  }
+}
 
 export default Listings;
