@@ -9,12 +9,5 @@ POST /api/listing
 PUT /api/listing/:id
 DELETE /api/listing/:id
 
-listing
-user model:
-  name
-  location
-  description
-  price
-  availability
-
-  booking
+*Problems*
+Cannot collect API data from backend

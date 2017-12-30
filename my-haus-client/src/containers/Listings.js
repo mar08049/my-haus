@@ -9,7 +9,7 @@ class Listings extends Component {
     return (
       <div className="ListingsContainer">
         <h1>Listings</h1>
-        {this.props.listings.map(listing => <ListingList key={listings.id} listing={ListingForm}/>)}
+        {this.props.listings.map(listing => <ListingList key={listing.id} listing={ListingForm}/>)}
       </div>
     )
   }
