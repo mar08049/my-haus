@@ -1,30 +1,42 @@
-import React, { Component } from 'react';
-import Listings from './Listings.js';
+import React from 'react';
 import './App.css';
 
-const API_URL = "http://localhost:3001/api";
-
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      listings: []
-    }
-  }
-  componentDidMount(){
-    fetch(`${API_URL}/listings`, {
-      
-    })
-      .then(response => response.json())
-      .then(listings => this.setState({ listings }))
-  }
+class App extends React.Component {
   render() {
-    return(
-      <div className="App">
-        <Listings listings={this.state.listings}/>
-      </div>
-    )
+    return (
+    <div>
+  
+      <h1>My Haus</h1>
+      <h3>Your best source for vacation rentals in Germany</h3>
+    </div>
+  )
   }
 }
+
+
+// const API_URL = "http://localhost:3001/api";
+//
+// class App extends Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = {
+//       listings: []
+//     }
+//   }
+//   componentDidMount(){
+//     fetch(`${API_URL}/listings`, {
+//
+//     })
+//       .then(response => response.json())
+//       .then(listings => this.setState({ listings }))
+//   }
+//   render() {
+//     return(
+//       <div className="App">
+//         <Listings listings={this.state.listings}/>
+//       </div>
+//     )
+//   }
+// }
 
 export default App;
