@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchListing, deleteListing } from '../actions/listings';
-import { ListingCard } from '../components/ListingCard';
+import { ListingList } from '../components/ListingList';
 
 class Listing extends React.Component {
 
@@ -13,7 +13,7 @@ class Listing extends React.Component {
     onClickDelete = listingID => {
         const { history, deleteListing } = this.props
 
-        deleteOil(listingID, history);
+        deleteListing(listingID, history);
     }
 
     render() {
@@ -22,7 +22,7 @@ class Listing extends React.Component {
         if (!listing.errors) {
             return (
                 <div>
-                    <ListingCard listing={ listing } deleteButton={ this.onClickDelete } />
+                    <ListingList listing={ listing } deleteButton={ this.onClickDelete } />
                 </div>
             )
         } else {

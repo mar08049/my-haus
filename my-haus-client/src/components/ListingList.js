@@ -1,14 +1,20 @@
+
 import React from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const ListingList = ({ listings }) => (
-  <div key={listing.id} className="ListingList">
-    <h3>{listing.name}</h3>
-    <h4>{listing.location}</h4>
-    <p>{listing.description}</p>
-    <p>Price per Night: ${listing.price}</p>
-  </div>
-)
+const ListingList = ({ listings }) => {
+    const renderListings = listings.map(listing =>
+        <ListGroupItem key={ listing.id }>
+            <Link key={ listing.id } to={`/listings/${listing.id}`}>{ listing.title }</Link>
+        </ListGroupItem>
+    );
+
+    return (
+        <ListGroup>
+            { renderListings }
+        </ListGroup>
+    );
+};
 
 export default ListingList;

@@ -1,35 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import Home from './components/Home';
-import NavBar from './components/NavBar'
+import ListingForm from './containers/ListingForm';
+import ListingEditForm from './containers/ListingEditForm';
+import Listings from './containers/Listings';
+import Listing from './containers/Listing';
+import Navbar from './components/Navbar';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './index.css';
-import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
-
-import ListingForm from "./containers/ListingForm"
-
 
 
 ReactDOM.render(
-
-      <Router>
+  <Provider >
+    <Router>
+      <div>
         <div>
-          <Home />
-          <App />
-            <div>
-              <NavBar />
-            </div>
-            <div>
-              <Switch>
-                <Route path="/listings/new" component={ ListingForm } />
-              </Switch>
-            </div>
+          <Navbar />
         </div>
-      </Router>
-
-  ,document.getElementById('root')
+        <div>
+          <Switch>
+            <Route path="/listings/new" component={ ListingForm } />
+            <Route path="/listings/:id/edit" component={ ListingEditForm } />
+            <Route path="/listings/:id" component={ Listing } />
+            <Route path="/listings" component={ Listings } />
+            <Route path="/" component={ Home } />
+          </Switch>
+        </div>
+      </div>
+    </Router>
+  </Provider>,
+  document.getElementById('root')
 );
 
 registerServiceWorker();

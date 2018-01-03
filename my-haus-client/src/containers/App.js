@@ -5,7 +5,7 @@ class App extends React.Component {
   render() {
     return (
     <div>
-      <h3>Your best source for vacation rentals in Germany</h3>
+      <h3>Your best source for expat real estate in Germany</h3>
     </div>
   )
   }
