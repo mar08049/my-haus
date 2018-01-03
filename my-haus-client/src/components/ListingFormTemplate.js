@@ -52,17 +52,44 @@ export const ListingFormTemplate = ({ listing, handleOnChange, handleOnSubmit, b
         </FormGroup>
 
         <FormGroup row>
-            <Label for="availability" sm={2}>Available:</Label>
+            <Label for="agent_name" sm={2}>Available:</Label>
             <Col sm={10}>
                 <Input
                     onChange={ handleOnChange }
                     type="textarea"
-                    name="availability"
-                    defaultValue={ listing.availability }
+                    name="agent_name"
+                    defaultValue={ listing.agent_name }
                 />
             </Col>
         </FormGroup>
 
+        <FormGroup row>
+            <Label for="agent_number" sm={2}>Available:</Label>
+            <Col sm={10}>
+                <Input
+                    onChange={ handleOnChange }
+                    type="textarea"
+                    name="agent_number"
+                    defaultValue={ listing.agent_number }
+                />
+            </Col>
+        </FormGroup>
+
+        <FormGroup row>
+            <Label for="agent_email" sm={2}>Available:</Label>
+            <Col sm={10}>
+                <Input
+                    onChange={ handleOnChange }
+                    type="textarea"
+                    name="agent_email"
+                    defaultValue={ listing.agent_email }
+                />
+            </Col>
+        </FormGroup>
+
+
         <Button type="submit">{buttonText}</Button>
     </Form>
 );
+
+export default ListingFormTemplate;
