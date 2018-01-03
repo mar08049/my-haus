@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-
 import { fetchListing, deleteListing } from '../actions/listings';
-import { ListingList } from '../components/ListingList';
+import ListingList from '../components/ListingList';
 
 class Listing extends React.Component {
 

@@ -4,12 +4,12 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './components/Home';
+import App from './containers/App';
 import ListingForm from './containers/ListingForm';
 import ListingEditForm from './containers/ListingEditForm';
 import Listings from './containers/Listings';
 import Listing from './containers/Listing';
-import Navbar from './components/Navbar';
-
+import NavBar from './components/NavBar';
 import registerServiceWorker from './registerServiceWorker';
 
 
@@ -18,7 +18,7 @@ ReactDOM.render(
     <Router>
       <div>
         <div>
-          <Navbar />
+          <NavBar />
         </div>
         <div>
           <Switch>
@@ -29,6 +29,7 @@ ReactDOM.render(
             <Route path="/" component={ Home } />
           </Switch>
         </div>
+        <App />
       </div>
     </Router>
   </Provider>,

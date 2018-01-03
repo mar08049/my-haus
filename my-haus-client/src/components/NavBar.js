@@ -2,22 +2,22 @@ import React from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const NavBar = () => {
   return (
-  <div>
-    <Nav tabs>
-      <NavItem>
-        <NavLink tag={ Link } to="/" active>Home</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink tag={ Link } to="/listings">Listings</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink tag={ Link } to="/users/:id/bookings">Bookings</NavLink>
-      </NavItem>
-    </Nav>
-  </div>
+    <div>
+      <Nav tabs>
+        <NavItem>
+          <NavLink tag={ Link } to="/" active>Home</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink tag={ Link } to="/listings">Listings</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink tag={ Link } to="/users/:id/bookings">Bookings</NavLink>
+        </NavItem>
+      </Nav>
+    </div>
   );
 };
 
-export default Navbar;
+export default NavBar;
