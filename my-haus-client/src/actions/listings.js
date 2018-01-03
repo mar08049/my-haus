@@ -24,7 +24,7 @@ const addListing = listing => {
   }
 }
 
-const updatedListing = listing => {
+const updateListing = listing => {
   return {
     type: 'UPDATED_LISTING_SUCCESS',
     listing
@@ -106,7 +106,7 @@ export const deleteListing = (listingID, routerHistory) => {
         return fetch(`${API_URL}/listing/${listingID}`, request)
             .then(response => response.json())
             .then(listing => {
-                dispatch(destroyOil(oil));
+                dispatch(destroyListing(listing));
                 routerHistory.replace(`/listings`)
             })
             .catch(error => console.log(error));

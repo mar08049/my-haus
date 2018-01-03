@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
-import ListingList from "../components/ListingList.js";
-import ListingForm from "./ListingForm";
-import "./Listings.css";
+import { connect } from 'react-redux';
+
+import ListingsList from '../components/ListingsList';
+import { fetchListings } from '../actions/listings';
 
 class Listings extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchListings()
+  }
+
   render() {
     return (
-      <div className="ListingsContainer">
-        <h1>Listings</h1>
-        {this.props.listings.map(listing => <ListingList key={listing.id} listing={ListingForm}/>)}
+      <div>
+        <ListingsList oils={ this.props.listings } />
       </div>
     )
   }
 }
 
-export default Listings;
+const mapStateToProps = (state) => {
+  return ({
+    listings: state.listings
+  })
+}
+
+export default connect(mapStateToProps, { fetchListings })(Listings);
