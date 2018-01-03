@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ListingForm extends Component {
+class BookingForm extends Component {
   render() {
     return(
       <div>
@@ -9,4 +9,4 @@ class ListingForm extends Component {
   }
 }
 
-export default ListingForm;
+export default BookingForm;

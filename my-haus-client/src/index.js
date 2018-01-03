@@ -1,24 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from './components/Home';
+import NavBar from './components/NavBar'
+
+import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 
+
+
 ReactDOM.render(
+
+      <Router>
       <div>
-        <div>
-          <Navbar />
-        </div>
-        <div>
-          <Switch>
-            <Route path="/bookings/new" component={ BookingForm } />
-            <Route path="/bookings/:id/edit" component={ BookingEditForm } />
-            <Route path="/bookings/:id" component={ BookingShow } />
-            <Route path="/bookings" component={ BookingsIndex } />
-            <Route path="/" component={ Home } />
-          </Switch>
-        </div>
+        <Home />
+        <App />
+        <NavBar />
       </div>
+      </Router>
+
   ,document.getElementById('root')
 );
 

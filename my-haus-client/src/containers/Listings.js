@@ -3,7 +3,7 @@ import ListingList from "../components/ListingList.js";
 import ListingForm from "./ListingForm";
 import "./Listings.css";
 
-class Listings extends Component {
+class Listings extends React.Component {
 
   render() {
     return (

@@ -1,7 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => (
+const Navbar = () => {
+  return (
   <div>
     <Nav tabs>
       <NavItem>
@@ -15,6 +17,7 @@ const Navbar = () => (
       </NavItem>
     </Nav>
   </div>
-)
+  );
+};
 
 export default Navbar;

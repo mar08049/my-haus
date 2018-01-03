@@ -5,13 +5,13 @@ class App extends React.Component {
   render() {
     return (
     <div>
-  
-      <h1>My Haus</h1>
       <h3>Your best source for vacation rentals in Germany</h3>
     </div>
   )
   }
 }
+
+export default App;
 
 
 // const API_URL = "http://localhost:3001/api";
@@ -38,5 +38,3 @@ class App extends React.Component {
 //     )
 //   }
 // }
-
-export default App;
