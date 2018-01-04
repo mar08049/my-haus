@@ -4,9 +4,4 @@ Rails.application.routes.draw do
     resources :listings, except: [:new, :edit]
   end
 
-  namespace :api do
-    resources :users do
-      resources :bookings
-    end
-  end
 end

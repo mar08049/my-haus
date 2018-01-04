@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import ListingList from '../components/ListingList';
-import { fetchListings } from '../actions/listings';
+
 
 class Listings extends React.Component {
 
@@ -13,7 +13,7 @@ class Listings extends React.Component {
   render() {
     return (
       <div>
-        <ListingList oils={ this.props.listings } />
+        <ListingList listings={ this.props.listings } />
       </div>
     )
   }
@@ -25,4 +25,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchListings })(Listings);
+export default connect(mapStateToProps)(Listings);

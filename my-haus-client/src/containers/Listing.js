@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchListing, deleteListing } from '../actions/listings';
 import ListingCard from '../components/ListingCard';
 
 class Listing extends React.Component {
@@ -40,4 +39,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, { fetchListing, deleteListing })(Listing);
+export default connect(mapStateToProps)(Listing);

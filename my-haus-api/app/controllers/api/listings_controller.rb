@@ -1,9 +1,9 @@
 class Api::ListingsController < ApplicationController
-
   before_action :set_listing, only: [:show, :update, :destroy]
 
   def index
-    render json: Listing.all
+    @listings = Listing.all
+    render json: @listings
   end
 
   def show

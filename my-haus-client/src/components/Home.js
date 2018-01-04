@@ -4,9 +4,9 @@ import { Jumbotron } from 'reactstrap';
 
 const Home = (props) => {
   return (
-    <div>
+    <div className='heading'>
       <Jumbotron>
-        <h1 className="a">My Haus</h1>
+        <h1>My Haus</h1>
         <h3>Your best source for expat real estate in Germany.</h3>
       </Jumbotron>
     </div>

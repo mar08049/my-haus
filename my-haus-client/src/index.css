@@ -1,5 +1,21 @@
 body {
-  margin: 0;
-  padding: 0;
+  background-color: blue;
+  padding: 30px;
   font-family: sans-serif;
+}
+
+.sidebar {
+  background-color: lightblue;
+  float: left;
+  height: 500px;
+  padding: 20px;
+  line-height: 1.7em;
+  font-size: 1.2em;
+}
+
+.heading {
+  background-color: orange;
+  width: 100%;
+  padding: 20px;
+  font-family: Didot, serif;
 }
