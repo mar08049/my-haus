@@ -9,15 +9,16 @@ import ListingEditForm from './containers/ListingEditForm';
 import Listings from './containers/Listings';
 import Listing from './containers/Listing';
 import NavBar from './components/NavBar';
+
 import registerServiceWorker from './registerServiceWorker';
+import store from './store.js';
 
 
 ReactDOM.render(
-  <Provider >
+  <Provider store={ store }>
     <Router>
       <div>
         <div>
-          <NavBar />
         </div>
         <div>
           <Switch>
@@ -28,6 +29,7 @@ ReactDOM.render(
             <Route path="/" component={ Home } />
           </Switch>
         </div>
+        <NavBar/>
       </div>
     </Router>
   </Provider>,

@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { connect } from 'react-redux';
 
 import { fetchListing, editListing } from '../actions/listings';

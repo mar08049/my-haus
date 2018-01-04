@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListing, deleteListing } from '../actions/listings';
-import ListingList from '../components/ListingList';
+import ListingCard from '../components/ListingCard';
 
 class Listing extends React.Component {
 
@@ -21,7 +21,7 @@ class Listing extends React.Component {
         if (!listing.errors) {
             return (
                 <div>
-                    <ListingList listing={ listing } deleteButton={ this.onClickDelete } />
+                    <ListingCard listing={ listing } deleteButton={ this.onClickDelete } />
                 </div>
             )
         } else {
