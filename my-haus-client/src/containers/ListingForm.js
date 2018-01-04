@@ -25,10 +25,13 @@ class ListingForm extends Component {
 
     render() {
         const initialState = {
-            name: '',
+            title: '',
             description: '',
             location: '',
             price: '',
+            agent_name: '',
+            agent_number: '',
+            agent_email: ''
         }
 
         return (
