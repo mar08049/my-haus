@@ -1,17 +1,4 @@
-import React from 'react';
-import './App.css';
 
-class App extends React.Component {
-  render() {
-    return (
-    <div>
-      <h3>Your best source for expat real estate in Germany</h3>
-    </div>
-  )
-  }
-}
-
-export default App;
 
 
 // const API_URL = "http://localhost:3001/api";

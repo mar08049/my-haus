@@ -15,7 +15,7 @@ class ListingEditForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.updateListingFormData(this.props.oil)
+        this.props.updateListingFormData(this.props.listing)
     }
 
     handleOnChange = event => {
@@ -42,7 +42,7 @@ class ListingEditForm extends React.Component {
                     <h1>Edit Listing</h1>
                 </div>
                 <div>
-                    <ListingFormTemplate listing={ this.props.oil }
+                    <ListingFormTemplate listing={ this.props.listing }
                                      handleOnSubmit={ this.handleOnSubmit }
                                      handleOnChange={ this.handleOnChange }
                                      buttonText="Update Listing" />

@@ -13,7 +13,7 @@ const NavBar = () => {
           <NavLink tag={ Link } to="/listings">Listings</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={ Link } to="/users/:id/bookings">Bookings</NavLink>
+          <NavLink tag={ Link } to="/listings/new">Create Listing</NavLink>
         </NavItem>
       </Nav>
     </div>
