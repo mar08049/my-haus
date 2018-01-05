@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Listings from '../components/Listings';
 import ListingService from '../services/ListingService';
+import AddListing from '../components/AddListing';
 import './App.css';
 
 class App extends Component {
@@ -16,18 +17,24 @@ class App extends Component {
     ListingService.fetchListings().then(listings => this.setState({ listings })
     )
   }
+
+  addListing = listing => {
+     ListingService.createListing(listing).then(listing => this.setState({
+       listings: this.state.listings.concat(listing)
+     }))
+  }
+
   render() {
-    console.log(this.state.listings)
     return (
       <div className="App">
         <div className="navbar">
         {/*  <Navbar /> */}
         </div>
         <div className="sidebar">
-          <Listings listings={this.state.listings}/>
+          <Listings listings={this.state.listings} />
           </div>
         <div className="main-content">
-        {/*  <Listing /> */}
+          <AddListing addListing={this.addListing}/>
         </div>
       </div>
     );
