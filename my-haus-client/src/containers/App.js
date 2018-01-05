@@ -17,6 +17,7 @@ class App extends Component {
     )
   }
   render() {
+    console.log(this.state.listings)
     return (
       <div className="App">
         <div className="navbar">

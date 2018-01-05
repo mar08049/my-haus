@@ -1,9 +1,8 @@
-const API_URL = process.env.RAILS_API_URL;
-console.log(API_URL);
+const API_URL = process.env.REACT_APP_API_URL;
 
 const ListingService = {
   fetchListings() {
-    return fetch('/listings')
+    return fetch(`${API_URL}/listings`)
       .then(response => response.json())
   }
 }
