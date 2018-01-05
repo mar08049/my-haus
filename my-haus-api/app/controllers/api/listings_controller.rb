@@ -13,9 +13,9 @@ class Api::ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
-      render json: listing
+      render json: @listing
     else
-      render_errors_in_json
+      render json: { errors: ( message: "This Listing failed to save.")}
     end
   end
 
@@ -37,27 +37,6 @@ class Api::ListingsController < ApplicationController
 
   private
 
-  def set_listing
-    @listing = Listing.find_by(id: params[:id])
-
-    if !@listing
-      render json: {
-        errors: {
-          messages: { listing: "Listing can't be found" }
-          }
-        }, status: 404
-      end
-  end
-
   def listing_parmas
-    params.require(:listing).permit(:title, :location, :price, :description, :availability, :agent_name, :agent_number, :agent_email)
+    params.require(:listing).permit(:title, :location, :price, :description, :agent_name, :agent_number, :agent_email)
   end
-
-  def render_errors_in_json
-    render json: {
-      errors: {
-        messages: @listing.errors.messages
-      }
-    }, status: 422
-  end
-end
