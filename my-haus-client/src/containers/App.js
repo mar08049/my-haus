@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Listings from '../components/Listings';
 import ListingService from '../services/ListingService';
 import AddListing from '../components/AddListing';
-import {getListings } from "../actions/listings"
+
 import './App.css';
 
 class App extends Component {

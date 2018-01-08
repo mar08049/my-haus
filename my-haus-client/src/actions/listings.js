@@ -1,3 +1,5 @@
+import { resetListingForm} from './listingForm';
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 //Action Creators //
@@ -8,6 +10,13 @@ const setListings = listings => {
   }
 }
 
+const setListing = listings => {
+  return {
+    type: 'GET_LISTING_SUCCESS',
+    listing
+  }
+}
+
 const addListing = listing => {
   return {
     type: 'CREATE_LISTING_SUCCESS',
@@ -15,9 +24,24 @@ const addListing = listing => {
   }
 }
 
+const updateListing = listing => {
+  return {
+    type: 'UPDATED_LISTING_SUCCESS',
+    listing
+  }
+}
+
+const destroyListing = listing => {
+  return {
+    type: 'DELETE_LISTING_SUCCESS',
+    listing
+  }
+}
+
+const
 
 //Async Actions//
-export const getListings = () =>
+export const getListings = () => {
   return dispatch => {
     return fetch(`${API_URL}/listings`)
       .then(response => response.json())

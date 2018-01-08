@@ -5,19 +5,12 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import listings from './reducers/listings';
+import listingFormData from './reducers/listingFormData';
 
-const listings = (state = [], action) => {
-  switch(action.type) {
-    case 'GET_LISTINGS_SUCCESS':
-      return action.listings;
-
-    default:
-      return state;
-  }
-}
 
 const reducers = combineReducers({
-  listings: listings
+  listings,
+  listingFormData
 });
 
 const middleware = [thunk];
