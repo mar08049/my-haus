@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import Listings from '../components/Listings';
 import ListingService from '../services/ListingService';
 import AddListing from '../components/AddListing';
+import ListingCard from '../components/ListingCard';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super()
 
-    this.state = {
-      listings: []
-    }
-  }
 
   componentDidMount() {
     ListingService.fetchListings().then(listings =>
@@ -32,10 +27,11 @@ class App extends Component {
           <h1> My Haus NavBar </h1>
         </div>
         <div className="sidebar">
-          <Listings listings={this.state.listings} />
+          <Listings  />
           </div>
         <div className="main-content">
           <AddListing addListing={this.addListing}/>
+
         </div>
       </div>
     );

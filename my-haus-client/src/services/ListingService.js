@@ -14,7 +14,7 @@ const ListingService = {
         listing: listing
       }),
       headers: {
-        "Content-Type": 'application/json'
+        'Content-Type': 'application/json'
       }
     };
 
