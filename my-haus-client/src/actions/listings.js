@@ -1,44 +1,42 @@
-import { resetListingForm} from './listingForm';
+import { resetListingForm } from './listingForm';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 //Action Creators //
-const setListings = listings => {
+export const setListings = listings => {
   return {
     type: 'GET_LISTINGS_SUCCESS',
     listings
   }
 }
 
-const setListing = listings => {
+export const setListing = listing => {
   return {
     type: 'GET_LISTING_SUCCESS',
     listing
   }
 }
 
-const addListing = listing => {
+export const addListing = listing => {
   return {
     type: 'CREATE_LISTING_SUCCESS',
     listing
   }
 }
 
-const updateListing = listing => {
+export const updateListing = listing => {
   return {
     type: 'UPDATED_LISTING_SUCCESS',
     listing
   }
 }
 
-const destroyListing = listing => {
+export const destroyListing = listing => {
   return {
     type: 'DELETE_LISTING_SUCCESS',
     listing
   }
 }
-
-const
 
 //Async Actions//
 export const getListings = () => {
@@ -50,20 +48,20 @@ export const getListings = () => {
     }
   }
 
-  export const createListings = listing => {
-    return dispatch => {
-      return fetch(`${API_URL}/listings`, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ listing: listing })
+export const createListings = listing => {
+  return dispatch => {
+    return fetch(`${API_URL}/listings`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ listing: listing })
+    })
+      .then(response => response.json())
+      .then(listing => {
+        dispatch(addListing(listing))
+        dispatch(resetListingForm())
       })
-        .then(response => response.json())
-        .then(listing => {
-          dispatch(addListing(listing))
-          dispatch(resetListingForm())
-        })
-        .catch(error => console.log(error))
+      .catch(error => console.log(error))
     }
   }

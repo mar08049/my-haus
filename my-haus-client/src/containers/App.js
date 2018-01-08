@@ -8,9 +8,9 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-    ListingService.fetchListings().then(listings =>
-      this.setState({ listings })
-    )
+    // ListingService.fetchListings().then(listings =>
+    //   this.setState({ listings })
+    // )
   }
 
   addListing = listing => {
