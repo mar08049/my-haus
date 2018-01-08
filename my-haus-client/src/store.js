@@ -4,7 +4,7 @@ import {
   combineReducers
 } from 'redux';
 import thunk from 'redux-thunk';
-
+import listings from './reducers/listings';
 
 const listings = (state = [], action) => {
   switch(action.type) {
