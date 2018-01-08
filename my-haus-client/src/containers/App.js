@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="navbar">
-        {/*  <Navbar /> */}
+          <h1> My Haus NavBar </h1>
         </div>
         <div className="sidebar">
           <Listings listings={this.state.listings} />
