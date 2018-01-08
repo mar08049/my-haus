@@ -15,28 +15,30 @@ class Api::ListingsController < ApplicationController
     if @listing.save
       render json: @listing
     else
-      render json: { errors: ( message: "This Listing failed to save.")}
     end
   end
 
   def update
-    if @listing.update(listing_params)
-      render json: @listing
-    else
-      render json: { message: listing.errors }, status: 400
-    end
+   @listing.update(listing_params)
+   render json: @listing
   end
 
   def destroy
     if @listing.destroy
       render status: 204
     else
-      render json: { message: "Unable to Destroy"}, status: 400
+      
     end
   end
 
   private
 
-  def listing_parmas
+  def set_listing
+    @listing = Listing.find_by(id: params[:id])
+  end
+
+  def listing_params
     params.require(:listing).permit(:title, :location, :price, :description, :agent_name, :agent_number, :agent_email)
   end
+
+end

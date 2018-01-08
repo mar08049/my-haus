@@ -53,7 +53,7 @@ class AddListing extends Component {
         <label htmlFor="listing_location">Location</label>
         <input
           type="text"
-          name="listing_location"
+          name="location"
           value={this.state.location}
           onChange={this.handleOnChange}
           placeholder="Listing City or County"
@@ -62,7 +62,7 @@ class AddListing extends Component {
         <label htmlFor="listing_price">Price</label>
         <input
           type="integer"
-          name="listing_price"
+          name="price"
           value={this.state.price}
           onChange={this.handleOnChange}
           placeholder="Listing Price"
@@ -98,7 +98,7 @@ class AddListing extends Component {
         <label htmlFor="agent_email">Agent Email</label>
         <input
           type="text"
-          name="agent_name"
+          name="agent_email"
           value={this.state.agent_email}
           onChange={this.handleOnChange}
           placeholder="Agent Email"

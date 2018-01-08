@@ -14,15 +14,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    ListingService.fetchListings().then(listings => this.setState({ listings })
+    ListingService.fetchListings().then(listings =>
+      this.setState({ listings })
     )
   }
 
   addListing = listing => {
-    ListingService.createListing(listing).then(listing => console.log('Created Listing: ', listing))
-    //  ListingService.createListing(listing).then(listing => this.setState({
-    //    listings: this.state.listings.concat(listing)
-    //  }))
+      ListingService.createListing(listing).then(listing => this.setState({
+        listings: this.state.listings.concat(listing)
+      }))
   }
 
   render() {
