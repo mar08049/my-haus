@@ -21,9 +21,7 @@ class Listings extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return ({
-    listings: state.listings
-  })
+    return ({ listings: state.listings})
 }
 
 export default connect(mapStateToProps, { getListings })(Listings);
