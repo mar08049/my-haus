@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ListingCard from './ListingCard';
 import { getListings } from '../actions/listings';
+import Listing from './Listing';
 
 class Listings extends React.Component {
 
@@ -14,7 +14,7 @@ class Listings extends React.Component {
       <div className="Listings">
         <h3>Listings:</h3>
         {this.props.listings && this.props.listings.map(listing =>
-          <ListingCard key={listing.id} listing={listing} />)}
+          <Listing key={listing.id} listing={listing} />)}
       </div>
     );
   }

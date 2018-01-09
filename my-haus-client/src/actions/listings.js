@@ -48,9 +48,9 @@ export const getListings = () => {
     }
   }
 
-export const getListing = listingID => {
+export const getListing = listing => {
   return dispatch => {
-    return fetch(`${API_URL}/listings/${listingID}`)
+    return fetch(`${API_URL}/listings/${listing.idj}`)
       .then(response => response.json())
       .then(listing => dispatch(setListing(listing)))
       .catch(error => console.log(error));
