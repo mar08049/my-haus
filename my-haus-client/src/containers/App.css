@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: lightblue;
 }
 
 .navbar {
@@ -23,4 +24,5 @@
   width: 66vw;
   height: 90vw;
   background-color: lightgrey;
+  padding: 10px;
 }
