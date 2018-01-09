@@ -1,4 +1,4 @@
-export default (state =  {
+const initialState = {
   title: '',
   location: '',
   price: '',
@@ -6,11 +6,16 @@ export default (state =  {
   agent_name: '',
   agent_number: '',
   agent_email: '',
-}, action) => {
+}
+
+export default (state = initialState, action) => {
 
   switch(action.type) {
     case 'UPDATED_DATA':
-      return action.listingFormData
+      return action.listingFormData;
+
+    case 'RESET_LISTING_FORM':
+      return initialState;
 
     default:
       return state;
