@@ -1,47 +1,36 @@
 import React, { Component } from 'react';
-import Listings from '../components/Listings';
-import ListingService from '../services/ListingService';
-import AddListing from '../components/AddListing';
-import { NavBar, Home, NewListing, allListings } from '../components/NavBar';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-import Footer from '../components/Footer';
+import SideBar from '../components/SideBarCard';
+import Listings from './Listings';
 import './App.css';
 
 class App extends Component {
 
-  componentDidMount() {
-     ListingService.getListings().then(listings =>
+  constructor(props) {
+    super(props);
 
-       this.setState({ listings })
-     )
+    this.state = {
+      listings: []
+    }
   }
 
-  addListing = listing => {
-      ListingService.createListing(listing).then(listing => this.setState({
-        listings: this.state.listings.concat(listing)
-      }))
+  componentDidMount() {
+    fetch('http://localhost:3001/api/listings')
+      .then(response => response.json())
+      .then(listings => this.setState({ listings }))
   }
 
   render() {
     return (
       <div className="App">
-          <Router>
-            <div>
-              <NavBar />
-              <Route exact path="/" render={Home} />
-              <Route exact path="/listings" render={allListings} />
-              <Route exact path="/listings/new" render={NewListing} />
-            </div>
-          </Router>
-        <div className="sidebar">
-          <Listings  />
-          </div>
-        <div className="main-content">
-          <AddListing addListing={this.addListing}/>
-
+        <div className="navbar">
+        <h1>My Haus NavBar</h1>
         </div>
-          <Footer />
+        <div className="sidebar">
+          <SideBar listings={this.state.listings} />
+        </div>
+        <div className="main-content">
+          <Listings listings={this.state.listings} />
+        </div>
       </div>
     );
   }

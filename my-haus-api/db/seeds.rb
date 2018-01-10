@@ -5,43 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Listing.destroy_all
 
-Listing.create!([{
+Listing.create([{
   title: "Cottage in Hills",
   location: "Munich",
   price: 700000,
   description: "Beautiful 3 bedroom 2 bathroom several miles north of Munich",
+  img_url: "http://images.interchalet.de/teaser/deutschland_ferienhaus.jpg",
   agent_name: "Beatrice Bohm",
   agent_number: 5554444,
   agent_email: "ichbinbohm@yahoo.com"
-},
-{
-  title: "Stylish Castle",
-  location: "Berlin",
-  price: 10000000,
-  description: "War era castle",
-  agent_name: "Beatrice Bohm",
-  agent_number: 5554444,
-  agent_email: "ichbinbohm@yahoo.com"
-},
-{
-  title: "Apartment under Pub",
-  location: "Dortmund",
-  price: 150000,
-  description: "Drinks close by!",
-  agent_name: "Beatrice Bohm",
-  agent_number: 5554444,
-  agent_email: "ichbinbohm@yahoo.com"
-},
-{
-  title: "Townhome across from Rhine",
-  location: "Hamburg",
-  price: 400000,
-  description: "Beautiful 3 bedroom 2 bathroom several miles north of Munich",
-  agent_name: "Beatrice Bohm",
-  agent_number: 5554444,
-  agent_email: "ichbinbohm@yahoo.com"
-
 }])
 
-p "Created #{Listing.count} listings!"
+p "Created #{Listing.count} listing!"

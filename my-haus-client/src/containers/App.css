@@ -9,20 +9,28 @@
   margin-top: 0;
   padding: 5px;
   color: white;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
 }
 
 .sidebar {
   float: left;
   width: 29vw;
+  height: 100vw;
   background-color: grey;
   color: white;
+  border-right: solid;
+  border-color: black;
+  border-width: 2px;
 }
 
 .main-content {
   float: left;
-  width: 66vw;
-  height: 90vw;
   background-color: lightgrey;
   padding: 10px;
+  width: 65vw;
+}
+
+img {
+  width: 400px;
+  height: 300px
 }

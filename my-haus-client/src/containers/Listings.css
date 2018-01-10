@@ -1,4 +1,20 @@
-.ListingList {
+.ListingCard {
   background: whitesmoke;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  width: 500px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.SideBarCard {
+  background: whitesmoke;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  width: 200px;
+  height: 120px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: black;
 }
