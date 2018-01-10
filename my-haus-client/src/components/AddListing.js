@@ -15,7 +15,7 @@ class AddListing extends Component {
     }
   }
 
-  handleOnChange = event => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -46,7 +46,7 @@ class AddListing extends Component {
           type="text"
           name="title"
           value={this.state.title}
-          onChange={this.handleOnChange}
+          onChange={this.handleChange}
           placeholder="Listing Title"
         />
 
@@ -55,7 +55,7 @@ class AddListing extends Component {
           type="text"
           name="location"
           value={this.state.location}
-          onChange={this.handleOnChange}
+          onChange={this.handleChange}
           placeholder="Listing City or County"
         />
 
@@ -64,7 +64,7 @@ class AddListing extends Component {
           type="integer"
           name="price"
           value={this.state.price}
-          onChange={this.handleOnChange}
+          onChange={this.handleChange}
           placeholder="Listing Price"
         />
 
@@ -73,7 +73,7 @@ class AddListing extends Component {
           type="text"
           name="description"
           value={this.state.description}
-          onChange={this.handleOnChange}
+          onChange={this.handleChange}
           placeholder="Listing Description"
         />
 
@@ -82,7 +82,7 @@ class AddListing extends Component {
           type="text"
           name="agent_name"
           value={this.state.agent_name}
-          onChange={this.handleOnChange}
+          onChange={this.handleChange}
           placeholder="Agent Name"
         />
 
@@ -91,7 +91,7 @@ class AddListing extends Component {
           type="text"
           name="agent_number"
           value={this.state.agent_number}
-          onChange={this.handleOnChange}
+          onChange={this.handleChange}
           placeholder="Agent Phone"
         />
 
@@ -100,7 +100,7 @@ class AddListing extends Component {
           type="text"
           name="agent_email"
           value={this.state.agent_email}
-          onChange={this.handleOnChange}
+          onChange={this.handleChange}
           placeholder="Agent Email"
         />
 

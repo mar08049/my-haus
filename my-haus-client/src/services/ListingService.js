@@ -1,7 +1,7 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 const ListingService = {
-  fetchListings() {
+  getListings() {
     return fetch(`${API_URL}/listings`)
       .then(response => response.json())
   },

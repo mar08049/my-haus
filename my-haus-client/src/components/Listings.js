@@ -11,7 +11,7 @@ class Listings extends React.Component {
 
   render() {
     return (
-      <div className="Listings">
+      <div>
         <h3>Listings:</h3>
         {this.props.listings && this.props.listings.map(listing =>
           <Listing key={listing.id} listing={listing} />)}
@@ -26,4 +26,4 @@ const mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps, {getListings})(Listings);
+export default connect(mapStateToProps, { getListings })(Listings);
