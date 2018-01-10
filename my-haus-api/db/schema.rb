@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104173827) do
+ActiveRecord::Schema.define(version: 20180110141423) do
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180104173827) do
     t.string "agent_name"
     t.integer "agent_number"
     t.string "agent_email"
+    t.string "img_url"
   end
 
 end

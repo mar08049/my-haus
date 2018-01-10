@@ -1,52 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateListingFormData } from '../actions/listingForm';
+import { addListing } from '../actions/listings';
 
 class AddListing extends Component {
-  constructor(props) {
-    super(props)
 
-      this.state = {
-        title: '',
-        description: '',
-        price: '',
-        location: '',
-        agent_name: '',
-        agent_number: '',
-        agent_email: '',
-    }
-  }
-
-  handleChange = event => {
+  handleOnChange = event => {
     const { name, value } = event.target;
-    this.setState({
+    const currentListingFormData = Object.assign({}, this.props.listingFormData, {
       [name]: value
     })
+    this.props.updateListingFormData(currentListingFormData)
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const listing = this.state;
-    this.props.addListing(listing)
-    this.setState({
-      title: '',
-      description: '',
-      price: '',
-      location: '',
-      agent_name: '',
-      agent_number: '',
-      agent_email: '',
-    })
+    this.props.addListing(this.props.listingFormData)
   }
 
   render() {
-    console.log(this.state)
+    const { title, location, price, description, agent_name, agent_number, agent_email } = this.props.listingFormData;
+
     return (
       <form onSubmit={this.handeOnSubmit}>
         <label htmlFor="listing_title">Title</label>
         <input
           type="text"
           name="title"
-          value={this.state.title}
-          onChange={this.handleChange}
+          value={title}
+          onChange={this.handleOnChange}
           placeholder="Listing Title"
         />
 
@@ -54,8 +36,8 @@ class AddListing extends Component {
         <input
           type="text"
           name="location"
-          value={this.state.location}
-          onChange={this.handleChange}
+          value={location}
+          onChange={this.handleOnChange}
           placeholder="Listing City or County"
         />
 
@@ -63,8 +45,8 @@ class AddListing extends Component {
         <input
           type="integer"
           name="price"
-          value={this.state.price}
-          onChange={this.handleChange}
+          value={price}
+          onChange={this.handleOnChange}
           placeholder="Listing Price"
         />
 
@@ -72,8 +54,8 @@ class AddListing extends Component {
         <input
           type="text"
           name="description"
-          value={this.state.description}
-          onChange={this.handleChange}
+          value={description}
+          onChange={this.handleOnChange}
           placeholder="Listing Description"
         />
 
@@ -81,8 +63,8 @@ class AddListing extends Component {
         <input
           type="text"
           name="agent_name"
-          value={this.state.agent_name}
-          onChange={this.handleChange}
+          value={agent_name}
+          onChange={this.handleOnChange}
           placeholder="Agent Name"
         />
 
@@ -90,8 +72,8 @@ class AddListing extends Component {
         <input
           type="text"
           name="agent_number"
-          value={this.state.agent_number}
-          onChange={this.handleChange}
+          value={agent_number}
+          onChange={this.handleOnChange}
           placeholder="Agent Phone"
         />
 
@@ -99,8 +81,8 @@ class AddListing extends Component {
         <input
           type="text"
           name="agent_email"
-          value={this.state.agent_email}
-          onChange={this.handleChange}
+          value={agent_email}
+          onChange={this.handleOnChange}
           placeholder="Agent Email"
         />
 
@@ -110,4 +92,13 @@ class AddListing extends Component {
   }
 }
 
-export default AddListing;
+const mapStateToProps = state => {
+  return {
+    listingFormData: state.listingFormData
+  }
+}
+
+export default connect(mapStateToProps, {
+  updateListingFormData,
+  addListing
+})(AddListing);

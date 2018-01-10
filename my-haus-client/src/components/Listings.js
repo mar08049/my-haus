@@ -1,29 +1,29 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { getListings } from '../actions/listings';
-import Listing from './Listing';
+//import { connect } from 'react-redux';
+//import { getListings } from '../actions/listings';
+//import Listing from './Listing';
 
 class Listings extends React.Component {
 
-  componentDidMount() {
-    this.props.getListings()
-  }
+  // componentDidMount() {
+  //   this.props.getListings()
+  // }
 
   render() {
     return (
       <div>
         <h3>Listings:</h3>
-        {this.props.listings && this.props.listings.map(listing =>
-          <Listing key={listing.id} listing={listing} />)}
+        <p>Listing 1</p>
+        <p>Listing 2</p>
       </div>
-    );
+        //{this.props.listings && this.props.listings.map(listing =>
+        //  <Listing key={listing.id} listing={listing} />)}
+    )
   }
 }
 
-const mapStateToProps = (state) => {
-    return ({ listings: state.listings })
-}
+// const mapStateToProps = (state) => {
+//     //return ({ listings: state.listings })
+// }
 
-
-
-export default connect(mapStateToProps, { getListings })(Listings);
+export default Listings;

@@ -4,16 +4,14 @@ import ListingService from '../services/ListingService';
 import AddListing from '../components/AddListing';
 import { NavBar, Home, NewListing, allListings } from '../components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import ListingCard from '../components/ListingCard';
-import Footer from '../components/Footer';
 
+import Footer from '../components/Footer';
 import './App.css';
 
 class App extends Component {
 
   componentDidMount() {
-    debugger;
-     ListingService.fetchListings().then(listings =>
+     ListingService.getListings().then(listings =>
 
        this.setState({ listings })
      )
@@ -41,7 +39,7 @@ class App extends Component {
           </div>
         <div className="main-content">
           <AddListing addListing={this.addListing}/>
-          <ListingCard />
+
         </div>
           <Footer />
       </div>
