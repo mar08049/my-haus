@@ -4,19 +4,24 @@ import {
   combineReducers
 } from 'redux';
 import thunk from 'redux-thunk';
-import listings from './reducers/listings';
-import listingFormData from './reducers/listingFormData';
 
+const listingsReducer = (state = [], action) => {
+  switch(action.type) {
+    case 'GET_LISTINGS_SUCCESS':
+      return action.listings;
 
-const reducers = combineReducers({
-  listings,
-  listingFormData
-});
+    default:
+      return state;
+  }
+}
 
+const reducers = combineReducers[{
+  listings: listingsReducer
+}];
 const middleware = [thunk];
 
 export default createStore(
   reducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(...middleware)
-);
+  applyMiddleware(...middleware),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
