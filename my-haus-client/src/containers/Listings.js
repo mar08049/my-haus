@@ -8,7 +8,7 @@ class Listings extends Component {
 
   render() {
     return (
-      <div className="ListingContainer">
+      <div key="" className="ListingContainer">
         <h1>Listings</h1>
         {this.props.listings.map(listing => <ListingCard listing={listing} /> )}
         <ListingForm />
