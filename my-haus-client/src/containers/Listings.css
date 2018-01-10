@@ -1,6 +1,7 @@
 .ListingCard {
   background: whitesmoke;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   width: 500px;
   margin-bottom: 20px;
   padding-top: 10px;
@@ -10,6 +11,7 @@
 .SideBarCard {
   background: whitesmoke;
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   width: 200px;
   height: 120px;
   margin-bottom: 20px;
@@ -17,4 +19,13 @@
   padding-top: 5px;
   padding-bottom: 5px;
   color: black;
+}
+
+.ListingCard:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.SideBarCard:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
 }
