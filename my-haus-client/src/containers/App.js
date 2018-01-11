@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import ListingForm from './ListingForm';
 import SideBar from '../components/SideBarCard';
 import NavBar from '../components/NavBar';
 import Listings from './Listings';
@@ -12,6 +15,11 @@ class App extends Component {
       <div className="App">
         <div className="navbar">
           <NavBar />
+          <Switch>
+            <Route exact path="/" />
+            <Route path="/listings" component={Listings}/>
+            <Route path="/listings/new" component={ListingForm}/>
+          </Switch>
           <h1>MY HAUS</h1>
         </div>
         <div className="sidebar">

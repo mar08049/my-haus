@@ -3,10 +3,14 @@ import { connect } from 'react-redux';
 
 import ListingCard from '../components/ListingCard';
 import ListingForm from './ListingForm';
-import { getListings } from '../actions/listings';
+import { getListings, deleteListing } from '../actions/listings';
 import './Listings.css';
 
 class Listings extends Component {
+
+  handleOnClick = (listing) => {
+    this.props.deleteListing(listing)
+  }
 
   componentDidMount() {
     this.props.getListings()
