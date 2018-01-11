@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import ListingForm from './ListingForm';
 import SideBar from '../components/SideBarCard';
 import NavBar from '../components/NavBar';
+import About from '../components/About';
 import Listings from './Listings';
 import Footer from '../components/Footer';
 import './App.css';
@@ -17,7 +18,7 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/" />
-            <Route path="/listings" component={Listings}/>
+            <Route path="/about" component={About}/>
             <Route path="/listings/new" component={ListingForm}/>
           </Switch>
           <h1>MY HAUS</h1>

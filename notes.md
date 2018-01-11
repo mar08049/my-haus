@@ -8,7 +8,11 @@ DELETE /api/listing/:id
 
 *Problems*
 
-Creates, updates, deletes object with Rested on the backend but can't update with front end.
+*Creates, updates, deletes object with Rested on the backend but can't update with front end.*
+
+*Listings not rendering after implementing Redux.*
+
+*Add Listing form not working, not changing state.*
 
 [X]The code should be written in ES6 as much as possible
 
@@ -20,7 +24,7 @@ Creates, updates, deletes object with Rested on the backend but can't update wit
 
 [X]There should be 2 container components
 
-[ ]There should be 5 stateless components
+[X]There should be 5 stateless components
 
 [X]There should be 3 routes
 
