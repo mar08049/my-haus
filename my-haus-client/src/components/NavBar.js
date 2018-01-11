@@ -17,7 +17,7 @@ export const NavBar = () =>
       exact
       style={link}
       activeStyle={{
-        background: 'darkblue'
+        background: 'black'
       }}
     >Home</NavLink>
     <NavLink

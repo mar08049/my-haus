@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SideBar from '../components/SideBarCard';
+import NavBar from '../components/NavBar';
 import Listings from './Listings';
 import './App.css';
 
@@ -11,7 +12,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="navbar">
-        <h1>My Haus NavBar</h1>
+        <NavBar />
+        <h1>MY HAUS</h1>
         </div>
         <div className="sidebar">
           <SideBar  />

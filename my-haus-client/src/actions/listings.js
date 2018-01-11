@@ -11,12 +11,6 @@ const setListings = listings => {
   }
 }
 
-const setListing = listing => {
-  return {
-    type: "GET_OIL_SUCCESS",
-    listing
-  }
-}
 
 
 const addListing = listing => {
