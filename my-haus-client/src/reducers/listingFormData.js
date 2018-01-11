@@ -6,6 +6,7 @@ const initialState = {
   agent_name: '',
   agent_number: '',
   agent_email: '',
+  img_url: ''
 }
 
 export default (state = initialState, action) => {

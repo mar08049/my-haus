@@ -1,3 +1,5 @@
+
+//action creator//
 export const updateListingFormData = listingFormData => {
   return {
     type: 'UPDATED_DATA',
