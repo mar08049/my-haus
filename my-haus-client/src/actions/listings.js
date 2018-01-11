@@ -11,11 +11,31 @@ const setListings = listings => {
   }
 }
 
+const setListing = listing => {
+  return {
+    type: "GET_OIL_SUCCESS",
+    listing
+  }
+}
+
 
 const addListing = listing => {
   return {
     type: "CREATE_LISTING_SUCCES",
     listing
+  }
+}
+
+const updateListing = listing => {
+  return {
+    type: "UPDATE_LISTING_SUCCESS",
+    listing
+  }
+}
+
+const destroyListing = listing => {
+  return {
+    type: "DELETE_LISTING_SUCCESS"
   }
 }
 
@@ -31,7 +51,6 @@ export const getListings = () => {
 }
 
 export const createListing = listing => {
-  debugger;
   return dispatch => {
     return fetch(`${API_URL}/listings`, {
       method: "POST",
@@ -45,5 +64,37 @@ export const createListing = listing => {
       dispatch(resetListingForm())
     })
     .catch(error => console.log(error))
+  }
+}
+
+export const editListing = listing => {
+  const request = {
+    method: 'PUT',
+    body: JSON.stringify({ listing: listing }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+  return dispatch => {
+    return fetch(`${API_URL}/listings/${listing.id}`, request)
+      .then(response => response.json())
+      .then(listing => {dispatch(updateListing(listing));
+      })
+      .catch(error => console.log(error));
+  }
+}
+
+export const deleteListing = listing => {
+  const request = {
+    method: 'DELETE'
+  };
+
+  return dispatch => {
+    return fetch(`${API_URL}/listings/${listing.id}`, request)
+      .then(response => response.json())
+      .then(listing => {dispatch(destroyListing(listing));
+      })
+      .catch(error => console.log(error));
   }
 }
