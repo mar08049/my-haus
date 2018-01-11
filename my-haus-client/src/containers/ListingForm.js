@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { updateListingFormData } from '../actions/listingForm';
+import { createListing } from '../actions/listings';
 
 class ListingForm extends Component {
 
@@ -14,9 +15,10 @@ class ListingForm extends Component {
   }
 
   handleOnSubmit = event => {
-    event.preventDefault();
-    this.props.addListing(this.props.listingFormData)
+    event.preventDefault()
+    this.props.createListing(this.props.listingFormData)
   }
+  //console.log('sumbitted form')
 
   render() {
     const { title, price, location, description, img_url, agent_name, agent_number, agent_email } = this.props.listingFormData;
@@ -109,4 +111,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateListingFormData })(ListingForm);
+export default connect(mapStateToProps, {
+  updateListingFormData,
+  createListing
+ })(ListingForm);
