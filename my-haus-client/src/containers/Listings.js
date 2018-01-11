@@ -6,18 +6,17 @@ import ListingForm from './ListingForm';
 import { getListings } from '../actions/listings';
 import './Listings.css';
 
-
 class Listings extends Component {
 
-componentDidMount() {
-  this.props.getListings()
-}
+  componentDidMount() {
+    this.props.getListings()
+  }
 
   render() {
     return (
-      <div key="" className="ListingContainer">
+      <div className="ListingContainer">
         <h1>Listings</h1>
-        {this.props.listings.map(listing => <ListingCard key={listing.id} listing={listing} /> )}
+        {this.props.listings.map(listing => <ListingCard key={listing.id} listing={listing}/>)}
         <ListingForm />
       </div>
     );

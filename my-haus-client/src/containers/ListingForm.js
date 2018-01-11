@@ -22,6 +22,7 @@ class ListingForm extends Component {
 
   render() {
     const { title, price, location, description, img_url, agent_name, agent_number, agent_email } = this.props.listingFormData;
+    
     return (
       <div className="ListingForm">
         <h3>Add New Listing</h3>

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: lightblue;
+
 }
 
 .navbar {
@@ -53,4 +53,9 @@ h1 {
 
 h2 {
   font-family: "Courier New", Courier, monospace;
+}
+
+.footer {
+  background: darkgrey;
+  width: 95vw;
 }

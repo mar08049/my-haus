@@ -2,7 +2,6 @@ import { resetListingForm } from './listingForm';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
 
-
 //Action Creators//
 const setListings = listings => {
   return {
@@ -10,8 +9,6 @@ const setListings = listings => {
     listings
   }
 }
-
-
 
 const addListing = listing => {
   return {
@@ -29,7 +26,8 @@ const updateListing = listing => {
 
 const destroyListing = listing => {
   return {
-    type: "DELETE_LISTING_SUCCESS"
+    type: "DELETE_LISTING_SUCCESS",
+    listing
   }
 }
 
@@ -69,7 +67,6 @@ export const editListing = listing => {
       'Content-Type': 'application/json'
     }
   };
-
   return dispatch => {
     return fetch(`${API_URL}/listings/${listing.id}`, request)
       .then(response => response.json())

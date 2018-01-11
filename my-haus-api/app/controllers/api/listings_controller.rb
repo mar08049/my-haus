@@ -6,7 +6,7 @@ class Api::ListingsController < ApplicationController
   end
 
   def show
-   render json: Listing.find_by(id: params[:id])
+   render json: @listing
   end
 
   def create
