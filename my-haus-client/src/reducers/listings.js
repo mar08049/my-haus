@@ -1,10 +1,13 @@
-export default (state = [], action) => {
+export default (state = {loading: false, listings: []}, action) => {
   switch(action.type) {
     case 'GET_LISTINGS_SUCCESS':
-      return action.listings;
+      return Object.assign({}, state, {loading: false, listings: state.listings.concat(action.listings)});
+
+    case 'LOADING':
+        return Object.assign({}, state, {loading: true});
 
     case 'CREATE_LISTING_SUCCESS':
-      return state.concat(action.listing);
+      return Object.assign({}, state, {loading: false, listings: state.listings.concat(action.listings)});
 
     default:
       return state;

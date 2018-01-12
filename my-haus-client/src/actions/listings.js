@@ -34,10 +34,11 @@ const destroyListing = listing => {
 
 //Async Actions //
 export const getListings = () => {
-  return dispatch => {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING'});
     return fetch(`${API_URL}/listings`)
       .then(response => response.json())
-      .then(listings => dispatch(setListings))
+      .then(listings => dispatch(setListings(listings)))
       .catch(error => console.log(error));
   }
 }

@@ -12,10 +12,10 @@ const reducers = combineReducers({
   listings,
   listingFormData
 });
-const middleware = [thunk];
+
 
 export default createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(...middleware)
+  applyMiddleware(thunk)
 );
