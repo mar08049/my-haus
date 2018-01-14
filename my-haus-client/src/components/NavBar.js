@@ -10,7 +10,7 @@ const link = {
   color: 'white',
 }
 
-export const NavBar = () =>
+export const NavBar = (props) =>
   <div>
     <NavLink
       to="/"

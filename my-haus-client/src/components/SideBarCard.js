@@ -1,7 +1,10 @@
 import React from 'react';
 import '../containers/Listings.css';
 
+
+
 const SideBar = (props) => (
+
       <div className="SideBar">
         <h2>Quick View</h2>
         {props.listings && props.listings.map(listing =>

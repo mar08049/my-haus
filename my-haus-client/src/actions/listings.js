@@ -3,6 +3,7 @@ import { resetListingForm } from './listingForm';
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
 
 //Action Creators//
+
 const setListings = listings => {
   return {
     type: "GET_LISTINGS_SUCCESS",
@@ -10,9 +11,10 @@ const setListings = listings => {
   }
 }
 
+
 const addListing = listing => {
   return {
-    type: "CREATE_LISTING_SUCCES",
+    type: "CREATE_LISTING_SUCCESS",
     listing
   }
 }
@@ -35,7 +37,7 @@ const destroyListing = listing => {
 //Async Actions //
 export const getListings = () => {
   return (dispatch) => {
-    dispatch({ type: 'LOADING'});
+    dispatch({ type: 'FETCH_LISTINGS'});
     return fetch(`${API_URL}/listings`)
       .then(response => response.json())
       .then(listings => dispatch(setListings(listings)))

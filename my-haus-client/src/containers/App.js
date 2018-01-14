@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import ListingForm from './ListingForm';
 import SideBar from '../components/SideBarCard';
@@ -15,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="navbar">
-          <NavBar />
+          <NavBar history={this.props.history}/>
           <Switch>
             <Route exact path="/" />
             <Route path="/about" component={About}/>
@@ -24,7 +25,7 @@ class App extends Component {
           <h1>MY HAUS</h1>
         </div>
         <div className="sidebar">
-          <SideBar  />
+          <SideBar  listings={this.props.listings}/>
         </div>
         <div className="main-content">
           <Listings  />
@@ -35,4 +36,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return ({
+    loading: state.listings.loading,
+    listings: state.listings.listings
+  })
+}
+
+export default connect(mapStateToProps)(App);

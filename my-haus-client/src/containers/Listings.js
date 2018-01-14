@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import ListingCard from '../components/ListingCard';
+
 import ListingForm from './ListingForm';
 import { getListings, deleteListing } from '../actions/listings';
 import './Listings.css';
@@ -21,8 +22,7 @@ class Listings extends Component {
     return (
       <div className="ListingContainer">
         <h1>Listings</h1>
-
-        {this.props.loading ? this.props.listings.map(listing => <ListingCard key={listing.id} listing={listing}/>) : 'LOADING...'}
+          {this.props.listings.length ? this.props.listings.map(listing => <ListingCard key={listing.id} listing={listing}/>) : 'LOADING...'}
         <ListingForm />
       </div>
     );
@@ -30,13 +30,14 @@ class Listings extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state.listings.listings)
   return ({
-    listings: state.listings.listings, loading: state.listings.loading
+    listings: state.listings.listings, fetchListings: state.listings.fetchListings
   })
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
+  return bindActionCreators ({
     getListings
   }, dispatch)
 };
