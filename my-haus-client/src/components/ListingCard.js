@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollUpButton from "react-scroll-up-button";
 
 const ListingCard = ({ listing }) => (
   <div key={listing.id} className="ListingCard">
@@ -9,8 +10,9 @@ const ListingCard = ({ listing }) => (
     <p>{listing.description}</p>
     <p>Presented By: {listing.agent_name}</p>
     <p>Email: {listing.agent_email}</p>
-    <button onClick={() => this.props.handleOnClick(listing)}>Edit</button>
-    <button onClick={() => this.props.handleOnClick(listing)}>Delete</button>
+    <button className="Button" onClick={() => this.props.handleOnClick(listing)}>Edit</button>
+    <button className="Button" onClick={() => this.props.handleOnClick(listing)}>Delete</button>
+    <ScrollUpButton />
   </div>
 )
 

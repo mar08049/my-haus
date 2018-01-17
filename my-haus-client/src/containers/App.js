@@ -28,8 +28,9 @@ class App extends Component {
           <SideBar  listings={this.props.listings}/>
         </div>
         <div className="main-content">
+          <ListingForm />
           <Listings  />
-          
+
         </div>
           <Footer />
       </div>
