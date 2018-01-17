@@ -12,6 +12,7 @@ const SideBar = (props) => (
             <h3>{listing.title}</h3>
             <p>{listing.location}</p>
             <p>${listing.price}</p>
+            <button onClick={() => this.props.handleOnClick(listing)}>Details</button>
           </div>
           )}
       </div>

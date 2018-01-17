@@ -9,6 +9,7 @@ const ListingCard = ({ listing }) => (
     <p>{listing.description}</p>
     <p>Presented By: {listing.agent_name}</p>
     <p>Email: {listing.agent_email}</p>
+    <button onClick={() => this.props.handleOnClick(listing)}>Edit</button>
     <button onClick={() => this.props.handleOnClick(listing)}>Delete</button>
   </div>
 )
