@@ -14,25 +14,26 @@ class ListingForm extends Component {
     this.props.updateListingFormData(currentListingFormData)
   }
 
-  handleOnSubmit = event => {
+  handleOnSubmit = (event) => {
+    debugger;
     event.preventDefault()
     this.props.createListing(this.props.listingFormData)
   }
-  //console.log('sumbitted form')
+
 
   render() {
     const { title, price, location, description, img_url, agent_name, agent_number, agent_email } = this.props.listingFormData;
-    
+
     return (
       <div className="ListingForm">
         <h3>Add New Listing</h3>
-        <form onSubmit={this.handeOnSubmit}>
+        <form onSubmit={(event) => this.handeOnSubmit(event)}>
           <label htmlFor="listing_title">Title</label>
           <input
             type="text"
             name="title"
             value={title}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             placeholder="Listing Title"
           />
 
@@ -41,7 +42,7 @@ class ListingForm extends Component {
             type="text"
             name="location"
             value={location}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             placeholder="Listing City or County"
           />
 
@@ -50,7 +51,7 @@ class ListingForm extends Component {
             type="integer"
             name="price"
             value={price}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             placeholder="Listing Price"
           />
 
@@ -59,7 +60,7 @@ class ListingForm extends Component {
             type="text"
             name="description"
             value={description}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             placeholder="Listing Description"
           />
 
@@ -68,7 +69,7 @@ class ListingForm extends Component {
             type="text"
             name="img_url"
             value={img_url}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             placeholder="Listing Image"
           />
 
@@ -77,16 +78,16 @@ class ListingForm extends Component {
             type="text"
             name="agent_name"
             value={agent_name}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             placeholder="Agent Name"
           />
 
           <label htmlFor="agent_number">Listing Agent Phone</label>
           <input
-            type="text"
+            type="integer"
             name="agent_number"
             value={agent_number}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             placeholder="Agent Phone"
           />
 
@@ -95,11 +96,11 @@ class ListingForm extends Component {
             type="text"
             name="agent_email"
             value={agent_email}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             placeholder="Agent Email"
           />
 
-          <button type="submit"> Add Listing</button>
+          <button type="submit" onClick={this.handleOnSubmit}>Add Listing</button>
         </form>
       </div>
     )
@@ -112,7 +113,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {
-  updateListingFormData,
-  createListing
- })(ListingForm);
+export default connect(mapStateToProps, {updateListingFormData,createListing})(ListingForm);

@@ -29,6 +29,7 @@ class App extends Component {
         </div>
         <div className="main-content">
           <Listings  />
+          
         </div>
           <Footer />
       </div>
