@@ -15,14 +15,13 @@ class ListingForm extends Component {
   }
 
   handleOnSubmit = (event) => {
-    debugger;
     event.preventDefault()
     this.props.createListing(this.props.listingFormData)
   }
 
 
   render() {
-    const { title, price, location, description, img_url, agent_name, agent_number, agent_email } = this.props.listingFormData;
+    const { title, price, location, description, img_url, agent_name, agent_email } = this.props.listingFormData;
 
     return (
       <div className="ListingForm">
@@ -80,15 +79,6 @@ class ListingForm extends Component {
             value={agent_name}
             onChange={(event) => this.handleOnChange(event)}
             placeholder="Agent Name"
-          />
-
-          <label htmlFor="agent_number">Listing Agent Phone</label>
-          <input
-            type="integer"
-            name="agent_number"
-            value={agent_number}
-            onChange={(event) => this.handleOnChange(event)}
-            placeholder="Agent Phone"
           />
 
           <label htmlFor="agent_email">Agent Email</label>

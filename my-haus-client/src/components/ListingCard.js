@@ -8,7 +8,6 @@ const ListingCard = ({ listing }) => (
     <p>${listing.price}</p>
     <p>{listing.description}</p>
     <p>Presented By: {listing.agent_name}</p>
-    <p>Phone: {listing.agent_number}</p>
     <p>Email: {listing.agent_email}</p>
     <button onClick={() => this.props.handleOnClick(listing)}>Delete</button>
   </div>
