@@ -2,10 +2,11 @@
   background: whitesmoke;
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  width: 500px;
+  width: 550px;
   margin-bottom: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+  border: 2px solid black;
 }
 
 .SideBarCard {
@@ -64,6 +65,47 @@
 }
 
 .SideButton:hover {
+  background-color: blue;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+input {
+  width: 490px;
+  height: 40px;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  background-color: lightblue;
+  margin-bottom: 0px;
+  font-family: "Courier New", Courier, monospace;
+  border-bottom: 2px solid darkgrey;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+label {
+  float: left;
+  font-size: 2em;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.FormButton {
+  background-color: darkblue;
+  border: none;
+  margin-right: 4px;
+  margin-top: 10px;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
+
+.FormButton:hover {
   background-color: blue;
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);

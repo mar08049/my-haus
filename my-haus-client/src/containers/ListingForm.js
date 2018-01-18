@@ -25,73 +25,75 @@ class ListingForm extends Component {
 
     return (
       <div className="ListingForm">
-        <h4>Add New Listing</h4>
-        <form onSubmit={(event) => this.handeOnSubmit(event)}>
-          <label htmlFor="listing_title">Title</label>
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={(event) => this.handleOnChange(event)}
-            placeholder="Listing Title"
-          />
 
-          <label htmlFor="listing_location">Location</label>
-          <input
-            type="text"
-            name="location"
-            value={location}
-            onChange={(event) => this.handleOnChange(event)}
-            placeholder="Listing City or County"
-          />
+          <form inline={true} onSubmit={(event) => this.handeOnSubmit(event)}>
+          <h4>Add New Listing</h4>
+            <label htmlFor="listing_title"></label>
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={(event) => this.handleOnChange(event)}
+              placeholder="Listing Title"
+            />
 
-          <label htmlFor="listing_price">Price</label>
-          <input
-            type="integer"
-            name="price"
-            value={price}
-            onChange={(event) => this.handleOnChange(event)}
-            placeholder="Listing Price"
-          />
+            <label htmlFor="listing_location"></label>
+            <input
+              type="text"
+              name="location"
+              value={location}
+              onChange={(event) => this.handleOnChange(event)}
+              placeholder="Listing City or County"
+            />
 
-          <label htmlFor="listing_description">Description</label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={(event) => this.handleOnChange(event)}
-            placeholder="Listing Description"
-          />
+            <label htmlFor="listing_price"></label>
+            <input
+              type="integer"
+              name="price"
+              value={price}
+              onChange={(event) => this.handleOnChange(event)}
+              placeholder="Listing Price"
+            />
 
-          <label htmlFor="listing_image">Attach Image</label>
-          <input
-            type="text"
-            name="img_url"
-            value={img_url}
-            onChange={(event) => this.handleOnChange(event)}
-            placeholder="Listing Image"
-          />
+            <label htmlFor="listing_description"></label>
+            <input
+              type="text"
+              name="description"
+              value={description}
+              onChange={(event) => this.handleOnChange(event)}
+              placeholder="Listing Description"
+            />
 
-          <label htmlFor="agent_name">Listing Agent</label>
-          <input
-            type="text"
-            name="agent_name"
-            value={agent_name}
-            onChange={(event) => this.handleOnChange(event)}
-            placeholder="Agent Name"
-          />
+            <label htmlFor="listing_image"></label>
+            <input
+              type="text"
+              name="img_url"
+              value={img_url}
+              onChange={(event) => this.handleOnChange(event)}
+              placeholder="Listing Image"
+            />
 
-          <label htmlFor="agent_email">Agent Email</label>
-          <input
-            type="text"
-            name="agent_email"
-            value={agent_email}
-            onChange={(event) => this.handleOnChange(event)}
-            placeholder="Agent Email"
-          />
+            <label htmlFor="agent_name"></label>
+            <input
+              type="text"
+              name="agent_name"
+              value={agent_name}
+              onChange={(event) => this.handleOnChange(event)}
+              placeholder="Agent Name"
+            />
 
-          <button type="submit" onClick={this.handleOnSubmit}>Add Listing</button>
-        </form>
+            <label htmlFor="agent_email"></label>
+            <input
+              type="text"
+              name="agent_email"
+              value={agent_email}
+              onChange={(event) => this.handleOnChange(event)}
+              placeholder="Agent Email"
+            />
+
+            <button className="FormButton" type="submit" variant="raised" onClick={this.handleOnSubmit}>Add Listing</button>
+          </form>
+
       </div>
     )
   }
