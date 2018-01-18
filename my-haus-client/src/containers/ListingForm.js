@@ -26,7 +26,7 @@ class ListingForm extends Component {
     return (
       <div className="ListingForm">
 
-          <form inline={true} onSubmit={(event) => this.handeOnSubmit(event)}>
+          <form onSubmit={(event) => this.handeOnSubmit(event)}>
           <h4>Add New Listing</h4>
             <label htmlFor="listing_title"></label>
             <input
@@ -91,7 +91,7 @@ class ListingForm extends Component {
               placeholder="Agent Email"
             />
 
-            <button className="FormButton" type="submit" variant="raised" onClick={this.handleOnSubmit}>Add Listing</button>
+            <button className="FormButton" type="submit" onClick={this.handleOnSubmit}>Add Listing</button>
           </form>
 
       </div>

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import ListingCard from '../components/ListingCard';
-
 import ListingForm from './ListingForm';
 import { getListings, deleteListing } from '../actions/listings';
 import './Listings.css';
@@ -11,6 +10,7 @@ import './Listings.css';
 class Listings extends Component {
 
   handleOnClick = (listing) => {
+    debugger;
     this.props.deleteListing(listing)
   }
 
