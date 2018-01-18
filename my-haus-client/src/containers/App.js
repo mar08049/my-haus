@@ -30,7 +30,6 @@ class App extends Component {
         <div className="main-content">
           <ListingForm />
           <Listings  />
-
         </div>
           <Footer />
       </div>

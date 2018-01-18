@@ -7,12 +7,9 @@ PUT /api/listing/:id
 DELETE /api/listing/:id
 
 *Problems*
-
-*Creates, updates, deletes object with Rested on the backend but can't update with front end.*
-
-*Listings not rendering after implementing Redux.*
-
-*Add Listing form not working, not changing state.*
+*Add listing not refreshing page*
+*Delete Listing Button not working*
+*Edit Listing*
 
 [X]The code should be written in ES6 as much as possible
 

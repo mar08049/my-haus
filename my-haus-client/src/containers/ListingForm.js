@@ -25,7 +25,7 @@ class ListingForm extends Component {
 
     return (
       <div className="ListingForm">
-        <h3>Add New Listing</h3>
+        <h4>Add New Listing</h4>
         <form onSubmit={(event) => this.handeOnSubmit(event)}>
           <label htmlFor="listing_title">Title</label>
           <input

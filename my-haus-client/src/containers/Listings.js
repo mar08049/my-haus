@@ -20,8 +20,8 @@ class Listings extends Component {
 
   render() {
     return (
-      <div className="ListingContainer">
-        <h1>Listings</h1>
+      <div className="ListingsList">
+      <h2>Listings</h2>
           {this.props.listings.length ? this.props.listings.map(listing => <ListingCard key={listing.id} listing={listing}/>) : 'LOADING...'}
         <ListingForm />
       </div>

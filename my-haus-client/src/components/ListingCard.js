@@ -6,7 +6,7 @@ const ListingCard = ({ listing }) => (
     <h3>{listing.title}</h3>
     <p>{listing.location}</p>
     <img className="ListingImage" src={listing.img_url} alt={listing.title} />
-    <p>${listing.price}</p>
+    <p>${listing.price} USD</p>
     <p>{listing.description}</p>
     <p>Presented By: {listing.agent_name}</p>
     <p>Email: {listing.agent_email}</p>
