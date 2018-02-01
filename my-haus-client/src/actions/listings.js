@@ -1,4 +1,5 @@
 import { resetListingForm } from './listingForm';
+require('isomorphic-fetch');
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
 
@@ -62,7 +63,8 @@ export const createListing = listing => {
   }
 }
 
-export const editListing = listing => {
+export function editListing(listing) {
+  debugger;
   const request = {
     method: 'PUT',
     body: JSON.stringify({ listing: listing }),
@@ -79,16 +81,30 @@ export const editListing = listing => {
   }
 }
 
-export const deleteListing = listing => {
-  const request = {
-    method: 'DELETE'
-  };
-
+export function deleteListing(listing) {
+      // const request = {
+      //   method: 'delete',
+      //   body: JSON.stringify({id: listing}),
+      //   headers: {
+      //     'Accept': 'application/json',
+      //     'Content-Type': 'application/json',
+      //   }
+      // };
+      // console.log("return dispatch");
   return dispatch => {
-    return fetch(`${API_URL}/listings/${listing.id}`, request)
-      .then(response => response.json())
-      .then(listing => {dispatch(destroyListing(listing));
-      })
-      .catch(error => console.log(error));
+    console.log("return dispatch");
+
+    const request = {
+      method: 'delete',
+      //body: JSON.stringify({id: listing}),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    };
+    dispatch(destroyListing(listing));
+    return fetch(`${API_URL}/listings/${listing}`, request)
+    .then(response => response.json())
+    .then(listing => dispatch(destroyListing(listing)))
   }
 }

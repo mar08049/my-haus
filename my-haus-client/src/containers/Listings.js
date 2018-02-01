@@ -9,11 +9,6 @@ import './Listings.css';
 
 class Listings extends Component {
 
-  handleOnClick = (listing) => {
-    debugger;
-    this.props.deleteListing(listing)
-  }
-
   componentDidMount() {
     this.props.getListings()
   }
@@ -22,7 +17,7 @@ class Listings extends Component {
     return (
       <div className="ListingsList">
       <h2>Listings</h2>
-          {this.props.listings.length ? this.props.listings.map(listing => <ListingCard key={listing.id} listing={listing}/>) : 'LOADING...'}
+          {this.props.listings.length ? this.props.listings.map(listing => <ListingCard key={listing.id} deleteListing={this.props.deleteListing} listing={listing}/>) : 'LOADING...'}
         <ListingForm />
       </div>
     );
@@ -38,7 +33,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators ({
-    getListings
+    getListings,
+    deleteListing
   }, dispatch)
 };
 
