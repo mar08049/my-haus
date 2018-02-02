@@ -17,18 +17,16 @@ class App extends Component {
       <div className="App">
         <div className="navbar">
           <NavBar history={this.props.history}/>
+
+          <div className="sidebar">
+            <SideBar listings={this.props.listings}/>
+          </div>
           <Switch>
-            <Route exact path="/" />
+            <Route exact path="/" component={Listings} />
             <Route path="/about" component={About}/>
             <Route path="/listings/new" component={ListingForm}/>
+
           </Switch>
-          <h1>MY HAUS</h1>
-        </div>
-        <div className="sidebar">
-          <SideBar  listings={this.props.listings}/>
-        </div>
-        <div className="main-content">
-          <Listings  />
         </div>
           <Footer />
       </div>

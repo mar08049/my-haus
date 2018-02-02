@@ -55,7 +55,8 @@ export const createListing = listing => {
       },
       body: JSON.stringify({listing: listing})
     })
-    .then(response => {
+    .then(response => response.json())
+    .then(listing => {
       dispatch(addListing(listing))
       dispatch(resetListingForm())
     })

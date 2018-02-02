@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import { updateListingFormData } from '../actions/listingForm';
 import { createListing } from '../actions/listings';
@@ -105,4 +106,11 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateListingFormData,createListing})(ListingForm);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators ({
+    updateListingFormData,
+    createListing
+  }, dispatch)
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListingForm);

@@ -11,6 +11,7 @@ const link = {
 }
 
 export const NavBar = (props) =>
+<div className="navbar">
   <div>
     <NavLink
       to="/"
@@ -36,7 +37,10 @@ export const NavBar = (props) =>
         background: 'darkblue'
       }}
     >Add Listing</NavLink>
-  </div>;
+  </div>
+  <h1>MY HAUS</h1>
+</div>
+  ;
 
 export const Home = () => <h1>My Haus</h1>;
 

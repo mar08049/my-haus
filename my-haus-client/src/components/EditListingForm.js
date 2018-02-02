@@ -105,4 +105,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateListingFormData,editListing})(EditListingForm);
+export default connect(mapStateToProps, {updateListingFormData, editListing})(EditListingForm);

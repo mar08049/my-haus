@@ -1,7 +1,8 @@
 import React from 'react';
 
 import ScrollUpButton from "react-scroll-up-button";
-import { editListing } from '../actions/listings'
+import { editListing } from '../actions/listings';
+import EditListingForm from './EditListingForm';
 
 
  const ListingCard = ({ listing, deleteListing }) => {
