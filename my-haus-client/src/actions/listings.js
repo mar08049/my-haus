@@ -82,21 +82,11 @@ export function editListing(listing) {
 }
 
 export function deleteListing(listing) {
-      // const request = {
-      //   method: 'delete',
-      //   body: JSON.stringify({id: listing}),
-      //   headers: {
-      //     'Accept': 'application/json',
-      //     'Content-Type': 'application/json',
-      //   }
-      // };
-      // console.log("return dispatch");
   return dispatch => {
     console.log("return dispatch");
 
     const request = {
       method: 'delete',
-      //body: JSON.stringify({id: listing}),
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
