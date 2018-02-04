@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import ListingForm from './ListingForm';
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="navbar">
-          <NavBar history={this.props.history}/>
+          <NavBar location={this.props.location}/>
 
           <div className="sidebar">
             <SideBar listings={this.props.listings}/>
@@ -41,4 +41,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
