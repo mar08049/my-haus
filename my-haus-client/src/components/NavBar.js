@@ -8,6 +8,9 @@ const link = {
   background: 'blue',
   textDecoration: 'none',
   color: 'white',
+  border: 'solid',
+  borderColor: 'black',
+  borderWidth: '2px'
 }
 
 const NavBar = (props) =>

@@ -17,14 +17,13 @@ class App extends Component {
       <div className="App">
         <div className="navbar">
           <NavBar location={this.props.location}/>
-
           <div className="sidebar">
             <SideBar listings={this.props.listings}/>
           </div>
           <Switch>
-            <Route exact path="/" component={Listings} />
-            <Route path="/about" component={About}/>
-            <Route path="/listings/new" component={ListingForm}/>
+            <Route exact path="/" component={ Listings } />
+            <Route path="/about" component={ About }/>
+            <Route path="/listings/new" component={ ListingForm } />
           </Switch>
         </div>
           <Footer />

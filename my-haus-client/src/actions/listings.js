@@ -20,12 +20,6 @@ const addListing = listing => {
   }
 }
 
-const updateListing = listing => {
-  return {
-    type: "UPDATE_LISTING_SUCCESS",
-    listing
-  }
-}
 
 const destroyListing = listing => {
   return {
@@ -64,23 +58,6 @@ export const createListing = listing => {
   }
 }
 
-export function editListing(listing) {
-  debugger;
-  const request = {
-    method: 'PUT',
-    body: JSON.stringify({ listing: listing }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  };
-  return dispatch => {
-    return fetch(`${API_URL}/listings/${listing.id}`, request)
-      .then(response => response.json())
-      .then(listing => {dispatch(updateListing(listing));
-      })
-      .catch(error => console.log(error));
-  }
-}
 
 export function deleteListing(listing) {
   return dispatch => {

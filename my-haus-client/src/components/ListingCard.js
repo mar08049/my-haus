@@ -19,5 +19,4 @@ import ScrollUpButton from "react-scroll-up-button";
   )
 }
 
-
 export default ListingCard;

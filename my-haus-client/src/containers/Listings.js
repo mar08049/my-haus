@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import ListingCard from '../components/ListingCard';
 import ListingForm from './ListingForm';
-import { getListings, deleteListing, editListing } from '../actions/listings';
+import { getListings, deleteListing } from '../actions/listings';
 import './Listings.css';
 
 class Listings extends Component {
@@ -36,8 +36,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators ({
     getListings,
-    deleteListing,
-    editListing
+    deleteListing
   }, dispatch)
 };
 
