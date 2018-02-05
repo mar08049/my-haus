@@ -1,8 +1,6 @@
 import React from 'react';
 
 import ScrollUpButton from "react-scroll-up-button";
-import { editListing } from '../actions/listings';
-import EditListingForm from './EditListingForm';
 
 
  const ListingCard = ({ listing, deleteListing }) => {
@@ -15,7 +13,6 @@ import EditListingForm from './EditListingForm';
     <p>{listing.description}</p>
     <p>Presented By: {listing.agent_name}</p>
     <p>Email: {listing.agent_email}</p>
-    <button className="Button" href={`/listings/${listing.id}/edit`} onClick={() => editListing(listing.id)}>Edit</button>
     <button className="Button" onClick={() => deleteListing(listing.id)}>Delete</button>
     <ScrollUpButton />
   </div>

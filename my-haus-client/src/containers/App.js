@@ -25,7 +25,6 @@ class App extends Component {
             <Route exact path="/" component={Listings} />
             <Route path="/about" component={About}/>
             <Route path="/listings/new" component={ListingForm}/>
-
           </Switch>
         </div>
           <Footer />
