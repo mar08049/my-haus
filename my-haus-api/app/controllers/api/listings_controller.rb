@@ -28,7 +28,7 @@ class Api::ListingsController < ApplicationController
 
   def destroy
     if @listing.destroy
-      render status: 204
+      render json: @listing
     else
       render json: { message: "Unable to destroy"}, status: 400
     end
@@ -41,6 +41,6 @@ class Api::ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:title, :location, :price, :description, :img_url, :agent_name, :agent_number, :agent_email)
+    params.require(:listing).permit(:title, :location, :price, :description, :img_url, :agent_name, :agent_number, :agent_email, :id, :like)
   end
 end

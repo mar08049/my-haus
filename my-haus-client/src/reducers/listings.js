@@ -12,8 +12,11 @@ export default (state = {loading: false, listings: []}, action) => {
     case 'DELETE_LISTING_SUCCESS':
         return Object.assign({}, state, {loading: false, listings: state.listings.filter(listing => listing.id !== action.listing.id)});
 
-    case 'EDIT_LISTING_SUCCESS':
-        return Object.assign({}, state, {loading: false, listings: state.listings.concat(action.listings)});
+    case 'ADD_LIKE':
+        return Object.assign({}, state, {loading: false, count: state.listing.count + 1});
+
+    case 'SUBTRACT_LIKE':
+        return Object.assign({}, state, {loading: false, count: state.listing.count - 1});
 
     default:
       return state;

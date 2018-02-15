@@ -28,6 +28,19 @@ const destroyListing = listing => {
   }
 }
 
+const addLike = listing => {
+  return {
+    type: "ADD_LIKE",
+    listing
+  }
+}
+
+const subtractLike = listing => {
+  return {
+    type: "SUBTRACT_LIKE",
+    listing
+  }
+}
 
 //Async Actions //
 export const getListings = () => {
@@ -74,5 +87,41 @@ export function deleteListing(listing) {
     return fetch(`${API_URL}/listings/${listing}`, request)
     .then(response => response.json())
     .then(listing => dispatch(destroyListing(listing)))
+  }
+}
+
+export function increaseLike(likeInfo) {
+  return dispatch => {
+    console.log("return dispatch");
+
+    const request = {
+      method: 'PATCH',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    };
+    dispatch(addLike(likeInfo));
+    return fetch(`${API_URL}/listings/${likeInfo.id}`, request)
+    .then(response => response.json())
+    .then(listing => dispatch(addLike(likeInfo)))
+  }
+}
+
+export function decreaseLike(dislikeInfo) {
+  return dispatch => {
+    console.log("return dispatch");
+
+    const request = {
+      method: 'PATCH',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    };
+    dispatch(subtractLike(dislikeInfo));
+    return fetch(`${API_URL}/listings/${dislikeInfo.id}`, request)
+    .then(response => response.json())
+    .then(listing => dispatch(subtractLike(dislikeInfo)))
   }
 }

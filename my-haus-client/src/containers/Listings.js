@@ -14,11 +14,12 @@ class Listings extends Component {
   }
 
   render() {
+
     return (
       <div className="main-content">
       <div className="ListingsList">
       <h2>Listings</h2>
-          {this.props.listings.length ? this.props.listings.map(listing => <ListingCard key={listing.id} deleteListing={this.props.deleteListing} editListing={this.props.editListing} listing={listing}/>) : 'LOADING...'}
+          {this.props.listings.length ? this.props.listings.map(listing => <ListingCard key={listing.id} deleteListing={this.props.deleteListing} listing={listing}/>) : 'LOADING...'}
         <ListingForm />
       </div>
       </div>
