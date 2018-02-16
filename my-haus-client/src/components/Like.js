@@ -4,8 +4,8 @@ const Like = (props) => {
   return (
     <div>
     {props.like}
-    <button onClick={props.handleLike}>Like</button>
-    <button onClick={props.handleDislike}>Dislike</button>
+    <button onClick={() => props.handleLike(props.listing)}>Like</button>
+    <button onClick={() => props.handleDislike(props.listing)}>Dislike</button>
     </div>
   )
 }

@@ -8,20 +8,20 @@ import Like from './Like.js';
 
 class SideBar extends Component {
 
-  handleLike = () => {
+  handleLike = (listing) => {
     const likeInfo = {
-      like: this.props.listing.like + 1,
-      id:this.props.listing.id
+      like: listing.like + 1,
+      id: listing.id
     }
     this.props.increaseLike(likeInfo)
   }
 
-  handleDislike = () => {
+  handleDislike = (listing) => {
     const dislikeInfo = {
-      like: this.props.listing.like - 1,
-      id: this.props.listing.id
+      like: listing.like - 1,
+      id: listing.id
     }
-    if (this.props.listing.like > 0) {
+    if (listing.like > 0) {
       this.props.decreaseLike(dislikeInfo);
     }
   }
@@ -38,6 +38,7 @@ class SideBar extends Component {
 
             <Like handleLike={this.handleLike}
              handleDislike={this.handleDislike}
+             listing={listing}
              />
           </div>
           )}

@@ -92,12 +92,9 @@ export function deleteListing(listing) {
 
 export function increaseLike(likeInfo) {
   return dispatch => {
-    console.log("return dispatch");
-
     const request = {
       method: 'PATCH',
       headers: {
-        'Accept': 'application/json',
         'Content-Type': 'application/json',
       }
     };
@@ -110,12 +107,9 @@ export function increaseLike(likeInfo) {
 
 export function decreaseLike(dislikeInfo) {
   return dispatch => {
-    console.log("return dispatch");
-
     const request = {
       method: 'PATCH',
       headers: {
-        'Accept': 'application/json',
         'Content-Type': 'application/json',
       }
     };
