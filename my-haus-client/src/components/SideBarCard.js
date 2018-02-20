@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {increaseLike , decreaseLike } from '../actions/listings.js';
-
+import {increaseLike  } from '../actions/listings.js';
 import '../containers/Listings.css';
 import Like from './Like.js';
 
@@ -14,16 +13,6 @@ class SideBar extends Component {
       id: listing.id
     }
     this.props.increaseLike(likeInfo)
-  }
-
-  handleDislike = (listing) => {
-    const dislikeInfo = {
-      like: listing.like - 1,
-      id: listing.id
-    }
-    if (listing.like > 0) {
-      this.props.decreaseLike(dislikeInfo);
-    }
   }
 
   render() {
@@ -56,7 +45,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators ({
     increaseLike,
-    decreaseLike
   }, dispatch)
 };
 

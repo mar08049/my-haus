@@ -3,9 +3,8 @@ import React from 'react';
 const Like = (props) => {
   return (
     <div>
-    {props.like}
+    <p>Likes: {props.listing.like}</p>
     <button onClick={() => props.handleLike(props.listing)}>Like</button>
-    <button onClick={() => props.handleDislike(props.listing)}>Dislike</button>
     </div>
   )
 }

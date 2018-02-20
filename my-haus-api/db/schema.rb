@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214190555) do
+ActiveRecord::Schema.define(version: 20180220191942) do
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180214190555) do
     t.integer "agent_number"
     t.string "agent_email"
     t.string "img_url"
-    t.integer "like"
+    t.integer "like", default: 0
   end
 
 end

@@ -35,13 +35,6 @@ const addLike = listing => {
   }
 }
 
-const subtractLike = listing => {
-  return {
-    type: "SUBTRACT_LIKE",
-    listing
-  }
-}
-
 //Async Actions //
 export const getListings = () => {
   return (dispatch) => {
@@ -102,20 +95,5 @@ export function increaseLike(likeInfo) {
     return fetch(`${API_URL}/listings/${likeInfo.id}`, request)
     .then(response => response.json())
     .then(listing => dispatch(addLike(likeInfo)))
-  }
-}
-
-export function decreaseLike(dislikeInfo) {
-  return dispatch => {
-    const request = {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    };
-    dispatch(subtractLike(dislikeInfo));
-    return fetch(`${API_URL}/listings/${dislikeInfo.id}`, request)
-    .then(response => response.json())
-    .then(listing => dispatch(subtractLike(dislikeInfo)))
   }
 }

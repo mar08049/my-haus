@@ -19,7 +19,8 @@ class Api::ListingsController < ApplicationController
   end
 
   def update
-   if @listing.update(listing_params)
+   if @listing
+     @listing.add_like
      render json: @listing
    else
      render json: { message: @listing.errors }, status: 400
@@ -41,6 +42,6 @@ class Api::ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:title, :location, :price, :description, :img_url, :agent_name, :agent_number, :agent_email, :id, :like)
+    params.fetch(:listing, {}).permit(:title, :location, :price, :description, :img_url, :agent_name, :agent_number, :agent_email, :like)
   end
 end

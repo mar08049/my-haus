@@ -20,9 +20,6 @@ export default (state = {loading: false, listings: []}, action) => {
         array.splice(listingIDX, 1, updatedListing)
         return Object.assign({}, state, {loading: false, listings: array});
 
-    case 'SUBTRACT_LIKE':
-        return Object.assign({}, state, {loading: false, count: state.listing.count - 1});
-
     default:
       return state;
   }
