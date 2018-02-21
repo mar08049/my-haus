@@ -13,13 +13,7 @@ export default (state = {loading: false, listings: []}, action) => {
         return Object.assign({}, state, {loading: false, listings: state.listings.filter(listing => listing.id !== action.listing.id)});
 
     case 'ADD_LIKE':
-        let array = [...state.listings]
-        let listing = array.find((listing)=> listing.id === action.listing.id)
-        let updatedListing = Object.assign({}, listing, action.listing)
-        let listingIDX = array.indexOf(listing)
-        array.splice(listingIDX, 1, updatedListing)
-        return Object.assign({}, state, {loading: false, listings: array});
-
+        return Object.assign({}, state, {loading: false, listings: state.listings.map(listing => listing.id === action.listing.id ? action.listing : listing)});//returns new Object with updated array
     default:
       return state;
   }

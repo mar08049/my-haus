@@ -91,9 +91,8 @@ export function increaseLike(likeInfo) {
         'Content-Type': 'application/json',
       }
     };
-    dispatch(addLike(likeInfo));
     return fetch(`${API_URL}/listings/${likeInfo.id}`, request)
     .then(response => response.json())
-    .then(listing => dispatch(addLike(likeInfo)))
+    .then(listing => dispatch(addLike(listing)))
   }
 }
